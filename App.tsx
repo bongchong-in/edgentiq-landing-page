@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
@@ -11,10 +11,29 @@ import Footer from './components/Footer';
 import BookingPage from './components/BookingPage';
 
 const App: React.FC = () => {
-  const path = window.location.pathname;
+  const [route, setRoute] = useState(() => window.location.hash || '#/');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setRoute(window.location.hash || '#/');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // If the hash was empty on load, update the URL to match the default state.
+    // The event listener will handle any state changes if necessary.
+    if (window.location.hash !== route) {
+      window.location.hash = route;
+    }
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
 
   const renderContent = () => {
-    if (path === '/book') {
+    if (route === '#/book') {
       return <BookingPage />;
     }
     return (
