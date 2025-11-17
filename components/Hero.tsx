@@ -1,27 +1,68 @@
 
 import React from 'react';
 
-const SchematicBackground: React.FC = () => (
-  <div className="absolute inset-0 z-0 opacity-10 overflow-hidden">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
-          <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" strokeWidth="0.5"/>
-        </pattern>
-        <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-          <rect width="80" height="80" fill="url(#smallGrid)"/>
-          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" strokeWidth="1"/>
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  </div>
+const AnimatedSchematic: React.FC = () => (
+  <>
+    <style>{`
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.6;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 1;
+        }
+      }
+      @keyframes subtleDraw {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.4;
+        }
+      }
+      .schematic-line {
+        opacity: 0;
+        animation: subtleDraw 10s ease-in-out forwards;
+      }
+      .schematic-node {
+        animation: pulse 8s ease-in-out infinite;
+      }
+    `}</style>
+    <div className="absolute inset-0 z-0 opacity-20 overflow-hidden">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+          <g stroke="#94A3B8" strokeWidth="0.5" fill="none">
+            {/* Lines */}
+            <path className="schematic-line" style={{ animationDelay: '0s' }} d="M 10,20 L 40,50" />
+            <path className="schematic-line" style={{ animationDelay: '1s' }} d="M 40,50 L 10,80" />
+            <path className="schematic-line" style={{ animationDelay: '0.5s' }} d="M 10,20 L 60,10" />
+            <path className="schematic-line" style={{ animationDelay: '1.5s' }} d="M 60,10 L 90,40" />
+            <path className="schematic-line" style={{ animationDelay: '2s' }} d="M 90,40 L 60,90" />
+            <path className="schematic-line" style={{ animationDelay: '2.5s' }} d="M 40,50 L 90,40" />
+            <path className="schematic-line" style={{ animationDelay: '3s' }} d="M 10,80 L 60,90" />
+          </g>
+          <g fill="#94A3B8">
+            {/* Nodes */}
+            <circle className="schematic-node" style={{ animationDelay: '0s' }} cx="10" cy="20" r="1.5" />
+            <circle className="schematic-node" style={{ animationDelay: '-2s' }} cx="40" cy="50" r="2" />
+            <circle className="schematic-node" style={{ animationDelay: '-4s' }} cx="10" cy="80" r="1.5" />
+            <circle className="schematic-node" style={{ animationDelay: '-1s' }} cx="60" cy="10" r="1" />
+            <circle className="schematic-node" style={{ animationDelay: '-3s' }} cx="90" cy="40" r="2.5" />
+            <circle className="schematic-node" style={{ animationDelay: '-5s' }} cx="60" cy="90" r="2" />
+          </g>
+        </svg>
+      </svg>
+    </div>
+  </>
 );
+
 
 const Hero: React.FC = () => {
   return (
     <section className="relative bg-white min-h-[calc(100vh-80px)] flex items-center">
-      <SchematicBackground />
+      <AnimatedSchematic />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
         <h1 className="text-4xl font-lora font-bold tracking-tight text-brand-teal sm:text-5xl lg:text-6xl">
           Stop Juggling 10 Different Tech Partners.
