@@ -6,6 +6,7 @@ import Problem from './components/Problem';
 import Solution from './components/Solution';
 import Process from './components/Process';
 import About from './components/About';
+import WhoWeServe from './components/WhoWeServe';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import BookingPage from './components/BookingPage';
