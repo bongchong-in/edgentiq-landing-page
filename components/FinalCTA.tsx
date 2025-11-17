@@ -12,7 +12,7 @@ const FinalCTA: React.FC = () => {
           Let's find out how we can connect your entire business, from the first click to the final invoice. The first call is free.
         </p>
         <a 
-          href="/book"
+          href="/#/book"
           className="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-brand-teal bg-brand-amber hover:bg-yellow-600 sm:w-auto transform hover:-translate-y-1 transition-all duration-300"
         >
           Book My Free "Full-Stack" Audit Now
