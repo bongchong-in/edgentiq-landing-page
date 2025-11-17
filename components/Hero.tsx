@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
           We design, build, and automate <span className="font-bold">all</span> of your business technology—from the website that wins you clients, to the internal tools that keep your business running.
         </p>
         <div className="mt-10">
-          <a href="/book" className="inline-block px-10 py-4 border border-transparent text-lg font-bold rounded-md shadow-lg text-white bg-brand-amber hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300">
+          <a href="/#/book" className="inline-block px-10 py-4 border border-transparent text-lg font-bold rounded-md shadow-lg text-white bg-brand-amber hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300">
             Book Your Free "Full-Stack" Audit
           </a>
         </div>
