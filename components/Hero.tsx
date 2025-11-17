@@ -108,14 +108,14 @@ const Hero: React.FC = () => {
       <AnimatedSchematic />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
         <h1 className="text-4xl font-lora font-bold tracking-tight text-brand-teal sm:text-5xl lg:text-6xl">
-          Stop Juggling 10 Different Tech Partners.
+          Stop Letting Manual Tasks and Messy Tech Run Your Business.
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-lg text-brand-charcoal sm:text-xl">
-          We design, build, and automate <span className="font-bold">all</span> of your business technology—from the website that wins you clients, to the internal tools that keep your business running.
+          Whether you're starting from zero or juggling ten different apps, we design and build a simple, all-in-one technology system that works the way you do.
         </p>
         <div className="mt-10">
           <a href="#/book" className="inline-block px-10 py-4 border border-transparent text-lg font-bold rounded-md shadow-lg text-white bg-brand-amber hover:bg-yellow-600 transform hover:-translate-y-1 transition-all duration-300">
-            Book Your Free "Full-Stack" Audit
+            Book Your Free "Discovery" Call
           </a>
         </div>
       </div>
