@@ -107,6 +107,22 @@ const Hero: React.FC = () => {
     <section className="relative bg-white min-h-[calc(100vh-80px)] flex items-center">
       <AnimatedSchematic />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+        
+        <div className="flex justify-center mb-8">
+            <a 
+              href="https://mxsstudio.edgentiq.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full bg-brand-teal/10 px-4 py-1.5 text-sm font-medium text-brand-teal ring-1 ring-inset ring-brand-teal/20 transition-all hover:bg-brand-teal/20 hover:ring-brand-teal/40"
+            >
+              <span className="mr-1">Exclusive technology partner for</span>
+              <span className="font-bold">MxS Studio</span>
+              <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+        </div>
+
         <h1 className="text-4xl font-lora font-bold tracking-tight text-brand-teal sm:text-5xl lg:text-6xl">
           Stop Letting Manual Tasks and Messy Tech Run Your Business.
         </h1>
